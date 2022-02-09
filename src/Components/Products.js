@@ -17,7 +17,7 @@ export default class Products extends Component {
         <header>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-              <a className="navbar-brand" href="#">
+              <a className="navbar-brand" href="index.html">
                 Vastra
               </a>
               <button
@@ -37,7 +37,11 @@ export default class Products extends Component {
               >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">
+                    <a
+                      className="nav-link active"
+                      aria-current="page"
+                      href="index.html"
+                    >
                       Home
                     </a>
                   </li>
