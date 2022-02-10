@@ -16,7 +16,7 @@ export default class Products extends Component {
       let res = articles.filter((val) =>
         val.name.toLowerCase().includes(a.toLowerCase())
       );
-      if (res.length == 0) {
+      if (res.length === 0) {
         alert("No Item Found");
       }
       this.setState({
