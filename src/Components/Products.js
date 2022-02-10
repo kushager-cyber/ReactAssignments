@@ -6,9 +6,32 @@ export default class Products extends Component {
     super();
     this.state = {
       articles: articles,
-      filteRes: articles,
-      searchInput: " ",
     };
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+  handleSearch(e) {
+    let a = e.target.value;
+    console.log(a);
+    if (a !== "") {
+      let res = articles.filter((val) =>
+        val.name.toLowerCase().includes(a.toLowerCase())
+      );
+      if (res.length == 0) {
+        alert("No Item Found");
+      }
+      this.setState({
+        articles: res,
+      });
+      console.log(
+        articles.filter((val) =>
+          val.name.toLowerCase().includes(a.toLowerCase())
+        )
+      );
+    } else {
+      this.setState({
+        articles: articles,
+      });
+    }
   }
 
   render() {
@@ -50,7 +73,7 @@ export default class Products extends Component {
                   <input
                     className="form-control me-2 "
                     type="search"
-                    onChange={(e) => this.searchItems(e.target.value)}
+                    onChange={this.handleSearch}
                     placeholder="Search"
                     aria-label="Search"
                   />
